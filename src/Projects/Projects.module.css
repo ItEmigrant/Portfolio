@@ -1,23 +1,21 @@
-.skillsBlock {
-    background: #eba4a4;
+.projectsBlock {
+    background: mediumspringgreen;
     height: 100vh;
 }
 
-.SkillsContainer {
+.projectsContainer {
     align-items: center;
     flex-direction: column;
     justify-content: flex-start;
 }
-
-.SkillsTitle {
-    background: #b14444;
+.ProjectsTitle {
+    background: #61dafb;
 }
 
-.skills {
+.projects {
     display: flex;
     justify-content: space-between;
     border: 1px solid;
     width: 100%;
     flex-wrap: wrap;
 }
-
