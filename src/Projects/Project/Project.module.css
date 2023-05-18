@@ -1,19 +1,39 @@
 .project {
+    border: 1px solid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 
+
+}
+
+.imgHref {
+
+
+}
+a {
+    text-decoration: none;
 }
 
 .projectImg {
-
+    display: flex;
+    width: 100%;
+    height: 200px;
 }
 
-.projectInfo {
+.containerName {
+    width: 100%;
+    background-color: #dcd4d4;
+    text-align: left;
 
 }
 
 .projectName {
-
+    display: flex;
+    background: yellow;
 }
 
 .description {
-
+    background-color: gold;
 }
