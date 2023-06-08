@@ -17,6 +17,8 @@ export const Skills = () => {
                     <Skill title={'HTML'} description={'It is marking'}/>
                     <Skill title={'CSS'} description={'It is a styles'}/>
 
+
+
                 </div>
             </div>
         </div>

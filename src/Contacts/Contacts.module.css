@@ -14,15 +14,17 @@
     align-items: center;
 
 
-
 }
 
 .FormContainer {
     display: flex;
-    height: 40%;
-    width: 60%;
-
+    flex-direction: column;
+    justify-content: space-around;
+    width: 280px;
+    height: 150px;
     border: 1px solid;
+
+
 
 }
 
@@ -47,12 +49,3 @@ h3 {
     background-color: lightsteelblue;
 }
 
-.MyInput {
-
-margin-top: 2px;
-}
-
-
-.MyTextarea {
-margin-top: 5px;
-}
