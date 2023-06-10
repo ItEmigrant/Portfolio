@@ -4,8 +4,9 @@ import styleContainer from '../Common/Styles/Container.module.css'
 import {Skill} from "./Skill/Skill";
 
 
-{/*ray use Skills with Map later*/
-}
+
+// ray use Skills with Map later
+
 export const Skills = () => {
     return (
         <div className={style.skillsBlock}>
@@ -16,9 +17,6 @@ export const Skills = () => {
                     <Skill title={'JS'} description={'It is a programming language'}/>
                     <Skill title={'HTML'} description={'It is marking'}/>
                     <Skill title={'CSS'} description={'It is a styles'}/>
-
-
-
 
                 </div>
             </div>
