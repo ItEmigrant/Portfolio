@@ -6,6 +6,7 @@ function App() {
     return (
         <div className="App">
             <Title>Welcome to IT-INCUBATOR</Title>
+            <Checkbox/>
         </div>
     );
 }
@@ -17,3 +18,11 @@ const Title = styled.h1`
     text-align: center;
     color: #e91e63;
 `;
+
+const Checkbox = styled.input.attrs(() => ({
+type:'checkbox'
+}))
+    `
+        //some styles
+
+    `
