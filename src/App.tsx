@@ -1,28 +1,16 @@
 import './App.css';
 import styled from 'styled-components';
+import {Header} from "./loyaut/header/Header";
 
 
 function App() {
     return (
         <div className="App">
-            <Title>Welcome to IT-INCUBATOR</Title>
-            <Checkbox/>
+            <Header/>
         </div>
     );
 }
 
 export default App;
 
-const Title = styled.h1`
-    font-size: 1.5em;
-    text-align: center;
-    color: #e91e63;
-`;
 
-const Checkbox = styled.input.attrs(() => ({
-type:'checkbox'
-}))
-    `
-        //some styles
-
-    `
