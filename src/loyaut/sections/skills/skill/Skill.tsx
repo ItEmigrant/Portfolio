@@ -4,11 +4,11 @@ import styled from "styled-components";
 
 
 type SkillPropsType = {
-    iconId:string
-    title:string
+    iconId: string
+    title: string
     text: string
 }
-export const Skill = (props:SkillPropsType) => {
+export const Skill = (props: SkillPropsType) => {
     return (
         <StyledSkill>
             <Icon iconId={props.iconId}/>
@@ -19,6 +19,9 @@ export const Skill = (props:SkillPropsType) => {
 };
 
 const StyledSkill = styled.div`
+    width: 30%;
+    background-color: rgba(63, 180, 63, 0.29);
+    margin: 10px;
 
 `
 
