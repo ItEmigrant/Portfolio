@@ -7,7 +7,7 @@ export const Header = () => {
     return (
         <StyledHeader>
             <Logo/>
-            <Menu/>
+            <Menu value={['Home','Skills','Works','Testimony','Contact']}/>
         </StyledHeader>
     );
 };

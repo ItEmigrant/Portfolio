@@ -1,16 +1,16 @@
 import styled from "styled-components";
 
-type FlexWrapperPropsType = {
+type flexWrapperPropsType = {
     directions?: string
     justify?: string
-    aling?: string
+    align?: string
     wrap?: string
 }
-export const FlexWrapper = styled.div<FlexWrapperPropsType>`
+
+export const FlexWrapper = styled.div<flexWrapperPropsType>`
     display: flex;
     flex-direction: ${props => props.directions || "row"};
     justify-content: ${props => props.justify || "flex-start"};
-    align-items: ${props => props.aling || 'stretch'};
+    align-items: ${props => props.align || 'stretch'};
     flex-wrap: ${props => props.wrap || "no wrap"};
-
 `

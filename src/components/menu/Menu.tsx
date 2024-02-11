@@ -1,24 +1,24 @@
 import React from 'react';
 import styled from "styled-components";
 
-export const Menu = () => {
+type menuPropsTYpe = {
+    value: string[]
+}
+
+export const Menu = (props: menuPropsTYpe) => {
     return (
         <StyledMenu>
-            <ul>
-                <li><a href="">Home</a></li>
-                <li><a href="">Skills</a></li>
-                <li><a href="">Work</a></li>
-                <li><a href="">Testimony</a></li>
-                <li><a href="">Contact</a></li>
-            </ul>
+            {props.value.map(el => <ul>
+                <li><a href="">{el}</a></li>
+            </ul>)}
         </StyledMenu>
     );
 };
 
 const StyledMenu = styled.nav`
-   ul {
-       display: flex;
-       gap: 30px;
-   } 
+    ul {
+        display: flex;
+        gap: 30px;
+    }
 `
 
