@@ -4,6 +4,7 @@ import {Main} from "./loyaut/sections/main/Main";
 import {Skills} from "./loyaut/sections/skills/Skills";
 import {Works} from "./loyaut/sections/works/Works";
 import {Testimony} from "./loyaut/sections/testimony/testimony";
+import {Contact} from "./loyaut/sections/contacts/Contacts";
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
             <Skills/>
             <Works/>
             <Testimony/>
+            <Contact/>
         </div>
     );
 }
