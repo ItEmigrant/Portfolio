@@ -6,8 +6,9 @@ export const Menu = (props: { value: string[] }) => {
     return (
         <StyledMenu>
             <ul>
-                {props.value.map((el, index) =>
-                    <li key={index}><a href="">{el}</a></li>
+
+                {props.value.map((el, index) => <li key={index}><a href="#">{el}</a>
+                    </li>
                 )}
             </ul>
         </StyledMenu>

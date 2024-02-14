@@ -5,6 +5,8 @@ import {Skills} from "./loyaut/sections/skills/Skills";
 import {Works} from "./loyaut/sections/works/Works";
 import {Testimony} from "./loyaut/sections/testimony/testimony";
 import {Contact} from "./loyaut/sections/contacts/Contacts";
+import {Slogan} from "./loyaut/sections/slogan/Slogan";
+import {Footer} from "./loyaut/footer/Footer";
 
 
 function App() {
@@ -16,6 +18,8 @@ function App() {
             <Works/>
             <Testimony/>
             <Contact/>
+            <Slogan/>
+            <Footer/>
         </div>
     );
 }
