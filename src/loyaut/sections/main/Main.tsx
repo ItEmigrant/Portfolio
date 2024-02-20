@@ -3,20 +3,23 @@ import styled from "styled-components";
 import photo from "../../../assets/images/myPhoto.jpg"
 import {FlexWrapper} from "../../../components/flexWrapper";
 import {Container} from "../../../components/Container";
+import {theme} from "../../../styles/Theme";
 
 export const Main = () => {
     return (
         <StyledMain>
             <Container>
-            <FlexWrapper align={'center'} justify={'space-between'}>
-                <StyledTextBlock>
-                    <SmallText>Hi There</SmallText>
-                    <StyledMainName>I am Bohdan Solomchak</StyledMainName>
-                    <StyledMainTitle>Frontend developer</StyledMainTitle>
-                </StyledTextBlock>
+                <FlexWrapper align={'center'} justify={'space-between'}>
+                    <StyledTextBlock>
+                        <SmallText>Hi There</SmallText>
+                        <StyledMainName>I am <span>Bohdan Solomchak</span></StyledMainName>
+                        <StyledMainTitle>Frontend developer</StyledMainTitle>
+                    </StyledTextBlock>
+                    <PhotoWrapper>
+                        <Photo src={photo} alt={'main photo'}/>
+                    </PhotoWrapper>
 
-                <Photo src={photo} alt={'main photo'}/>
-            </FlexWrapper>
+                </FlexWrapper>
             </Container>
         </StyledMain>
     );
@@ -34,16 +37,33 @@ const StyledTextBlock = styled.div`
 const StyledMainTitle = styled.h1`
     font-weight: 400;
     font-size: 27px;
-    
-    
+
+
 `
 
 const StyledMainName = styled.h2`
-    font-family: 'Josefin Sans',serif;
+    font-family: 'Josefin Sans', serif;
     font-weight: 700;
     font-size: 50px;
     letter-spacing: 0.05em;
-    
+    margin: 10px 0;
+
+    span {
+        position: relative;
+        z-index: 0;
+
+        &::before {
+            content: "";
+            display: inline-block;
+            width: 100%;
+            height: 20px;
+            background-color: ${theme.colors.accent};
+            position: absolute;
+            bottom: 0;
+            z-index: -1;
+        }
+    }
+
 `
 
 const SmallText = styled.span`
@@ -56,4 +76,18 @@ const Photo = styled.img`
     height: 430px;
     object-fit: cover;
 `
-
+const PhotoWrapper = styled.div`
+position: relative;
+    z-index: 0;
+    &::before {
+        content:"";
+        width: 360px;
+        height: 470px;
+        border: 5px solid ${theme.colors.MainColor};
+        
+        position: absolute;
+        top:-24px;
+        left:24px;
+        z-index: -1;
+    }
+`
