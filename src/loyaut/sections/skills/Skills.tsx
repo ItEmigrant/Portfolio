@@ -32,7 +32,7 @@ export const Skills = () => {
                         title={'CSS'}
                         text={'Lorem ipsum dolor sit amet'}/>
                     <Skill
-                        iconId={'codeSuperman'}
+                        iconId={'codeHTML'}
                         title={'JS'}
                         text={'Lorem ipsum dolor sit amet ipsum dolor sit'}/>
                 </FlexWrapper>
