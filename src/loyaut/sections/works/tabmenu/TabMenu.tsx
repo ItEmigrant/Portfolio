@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
-
+import {Link} from "../../../../components/Link";
 
 export const TabMenu = (props: { value: string[] }) => {
     return (
@@ -8,7 +8,7 @@ export const TabMenu = (props: { value: string[] }) => {
             <ul>
 
                 {props.value.map((el, index) => <StyledListItem key={index}>
-                        <StyledTabLink href="#">{el}</StyledTabLink>
+                        <Link href="#">{el}</Link>
                     </StyledListItem>
                 )}
             </ul>
@@ -17,22 +17,16 @@ export const TabMenu = (props: { value: string[] }) => {
 };
 
 const StyledTabMenu = styled.nav`
+    margin-bottom: 40px;
+
     ul {
         display: flex;
-        gap: 30px;
+        gap: 20px;
         justify-content: center;
-    }
-`
+    }`
 
 
 const StyledListItem = styled.li`
-
+   
 `
 
-const StyledTabLink = styled.a`
-    font-weight: 400;
-    font-size: 14px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-
-`
