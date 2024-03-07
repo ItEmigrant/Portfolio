@@ -4,10 +4,10 @@ import {theme} from "../../styles/Theme";
 export const MenuMobile = (props: { value: string[] }) => {
     return (
         <StyledMobileMenu>
-            <BurgerButton isOpen={true}>
+            <BurgerButton isOpen={false}>
                 <span></span>
             </BurgerButton>
-            <MobileMenuPopup isOpen={true}>
+            <MobileMenuPopup isOpen={false}>
                 <ul>
                     {props.value.map((el, index) => <ListItem key={index}>
                             <Link href="#">
