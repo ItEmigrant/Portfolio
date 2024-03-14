@@ -68,8 +68,8 @@ const Description = styled.div`
 `
 const StyledWork = styled.div`
     background-color: ${theme.colors.secondaryBg};
-    max-width: 540px;
-    width: 100%;
+    width: 330px;
+    flex-grow: 1;
 
     ${Link} {
         padding: 10px 0;
@@ -78,7 +78,12 @@ const StyledWork = styled.div`
             margin-left: 20px;
         }
     }
+
+    @media ${theme.media.deskTop} {
+        max-width: 540px;
+    }
 `
+
 const Image = styled.img`
     width: 100%;
     height: 260px;
