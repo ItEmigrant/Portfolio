@@ -35,7 +35,7 @@ const StyledMain = styled.section`
 const PhotoWrapper = styled.div`
     position: relative;
     z-index: 0;
-    margin-top: 65px;
+    
 
     &::before {
         content: "";
@@ -56,6 +56,10 @@ const PhotoWrapper = styled.div`
 
         }
     }
+    @media ${theme.media.mobile} {
+        margin-top: 65px;
+    }
+    
 `
 const StyledMainTitle = styled.h1`
     ${font({weight: 400, FMax: 27, FMin: 20})}
