@@ -1,9 +1,12 @@
+import React from 'react';
 import styled from "styled-components";
-import {theme} from "../../styles/Theme";
+import {theme} from "../../../styles/Theme";
 
-export const MenuHeader = (props: { value: string[] }) => {
+
+
+export const Menu: React.FC<{ value: string[] }> = (props: { value: string[] }) => {
     return (
-        <StyledHeaderMenu>
+        <div>
             <ul>
 
                 {props.value.map((el, index) => <ListItem key={index}>
@@ -19,22 +22,9 @@ export const MenuHeader = (props: { value: string[] }) => {
                     </ListItem>
                 )}
             </ul>
-        </StyledHeaderMenu>
+        </div>
     );
 };
-
-const StyledHeaderMenu = styled.nav`
-    ul {
-        display: flex;
-        gap: 30px;
-        justify-content: center;
-    }
-
-    @media ${theme.media.tablet} {
-        display: none;
-    }
-
-`
 
 const Mask = styled.span`
     position: absolute;
@@ -57,6 +47,8 @@ const Mask = styled.span`
     }
 
 `
+
+
 const Link = styled.a`
     color: transparent;
     font-family: 'Josefin Sans', sans-serif;
@@ -65,6 +57,7 @@ const Link = styled.a`
     text-align: center;
 
 `
+
 const ListItem = styled.li`
     position: relative;
 
