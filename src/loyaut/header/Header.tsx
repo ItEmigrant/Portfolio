@@ -2,20 +2,28 @@ import React from 'react';
 import {Logo} from "../../components/logo/Logo";
 import {Container} from "../../components/Container";
 import {FlexWrapper} from "../../components/flexWrapper";
-import {MenuDesktop} from "./MenuDesktop";
-import {MenuMobile} from "./MenuMobile";
+import {MenuDesktop} from "./Menu/headerMenu/MenuDesktop";
+import {MenuMobile} from "./Menu/headerMenu/MenuMobile";
 import {S} from './Header_Styles'
 
 
 const value = ['Home', 'Skills', 'Works', 'Testimony', 'Contact']
-export const Header:React.FC = () => {
+export const Header: React.FC = () => {
+    const [width, setWidth] = React.useState(window.innerWidth);
+    const breakpoint = 768;
+
+    React.useEffect(() => {
+        const handleWindowResize = () => setWidth(window.innerWidth);
+        window.addEventListener('resize', handleWindowResize);
+        return () => window.removeEventListener('resize', handleWindowResize);
+    }, []);
+
     return (
         <S.StyledHeader>
             <Container>
                 <FlexWrapper justify={'space-between'} align={'center'}>
                     <Logo/>
-                    <MenuDesktop value={value}/>
-                    <MenuMobile value={value}/>
+                    {width < breakpoint ? <MenuMobile value={value}/> : <MenuDesktop value={value}/>}
                 </FlexWrapper>
             </Container>
         </S.StyledHeader>

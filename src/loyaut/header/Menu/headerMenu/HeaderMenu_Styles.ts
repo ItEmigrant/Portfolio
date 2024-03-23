@@ -1,28 +1,72 @@
 import styled, {css} from "styled-components";
-import {theme} from "../../styles/Theme";
-import {Menu} from "./Menu/Menu";
-import React from "react";
+import {theme} from "../../../../styles/Theme";
 
-export const MenuMobile: React.FC<{ value: string[] }> = (props: { value: string[] }) => {
-    return (
-        <StyledMobileMenu>
-            <BurgerButton isOpen={false}>
-                <span></span>
-            </BurgerButton>
-            <MobileMenuPopup isOpen={false}>
-                <Menu value={props.value}/>
-            </MobileMenuPopup>
+//menu
+const Mask = styled.span`
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    height: 50%;
+    overflow-y: hidden;
+    //outline: 1px solid blue;
+    color: ${theme.colors.MainColor};
 
-        </StyledMobileMenu>
-    );
-};
+    & + & {
+        top: 50%;
 
-const StyledMobileMenu = styled.nav`
-    display: none;
-
-    @media ${theme.media.tablet} {
-        display: block;
+        span {
+            display: inline-block;
+            transform: translateY(-50%);
+        }
     }
+`
+
+const Link = styled.a`
+    color: transparent;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 400;
+    font-size: 30px;
+    text-align: center;
+`
+
+const ListItem = styled.li`
+    position: relative;
+
+    &::before {
+        content: "";
+        display: inline-block;
+        height: 2px;
+        background-color: ${theme.colors.MainColor};
+
+        position: absolute;
+        top: 50%;
+        left: -10px;
+        right: -10px;
+        z-index: 1;
+
+        transform: scale(0);
+
+    }
+
+    &:hover {
+        &::before {
+            transform: scale(1);
+        }
+
+        ${Mask} {
+            transform: skewX(12deg) translateX(4px);
+            color: ${theme.colors.font};
+
+            & + ${Mask} {
+                transform: skewX(12deg) translateX(-4px);
+            }
+        }
+    }
+`
+
+//MobileMenuStyles
+const MobileMenu = styled.nav`
 `
 
 const MobileMenuPopup = styled.div<{ isOpen: boolean }>`
@@ -99,3 +143,21 @@ const BurgerButton = styled.button<{ isOpen: boolean }>`
     }
 `
 
+//desktopMenu
+const HeaderMenu = styled.nav`
+    ul {
+        display: flex;
+        gap: 30px;
+        justify-content: center;
+    }
+`
+
+export const S = {
+    Link,
+    ListItem,
+    Mask,
+    MobileMenuPopup,
+    BurgerButton,
+    MobileMenu,
+    HeaderMenu
+}
