@@ -8,6 +8,21 @@ import imageSocialNetwork from '../../../assets/images/SocialNetwork.webp'
 import imageTodolist from '../../../assets/images/Timer.webp'
 import {Container} from "../../../components/Container";
 
+
+const WorkData = [
+    {
+        title: 'Social Network',
+        text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo, odio!',
+        src: imageSocialNetwork
+
+    },
+    {
+        title: 'Todolist',
+        text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit',
+        src: imageTodolist
+
+    }
+]
 const items = ['All', 'React', 'ReactToolkit', 'ReactQuery']
 export const Works = () => {
     return (
@@ -16,11 +31,13 @@ export const Works = () => {
                 <SectionTitle>My works</SectionTitle>
                 <TabMenu value={items}/>
                 <FlexWrapper justify={'space-between'} align={'flex-start'} wrap={'wrap'}>
-                    <Work title={'Social Network'}
-                          text={'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo, odio!'}
-                          src={imageSocialNetwork}/>
-                    <Work title={'Todolist'} text={'Lorem ipsum dolor sit amet, consectetur adipisicing elit.'}
-                          src={imageTodolist}/>
+                    {WorkData.map((el)=>{
+                    return <Work title={el.title}
+                                 text={el.text}
+                                 src={el.src}/>
+                    })}
+
+
                 </FlexWrapper>
             </Container>
         </StyledWorks>

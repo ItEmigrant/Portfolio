@@ -1,9 +1,9 @@
 import React from 'react';
-import styled from "styled-components";
 import {FlexWrapper} from "../../../components/flexWrapper";
 import {SectionTitle} from "../../../components/SectionTitle";
 import {Skill} from "./skill/Skill";
 import {Container} from "../../../components/Container";
+import {S} from "./Skill_Style"
 
 const skillData = [
     {
@@ -39,7 +39,7 @@ const skillData = [
 ]
 export const Skills = () => {
     return (
-        <StyledSkills>
+        <S.Skills>
             <Container>
                 <SectionTitle>My skills</SectionTitle>
                 <FlexWrapper wrap={'wrap'} justify={'space-between'}>
@@ -52,9 +52,7 @@ export const Skills = () => {
                     })}
                 </FlexWrapper>
             </Container>
-        </StyledSkills>
+        </S.Skills>
     );
 };
 
-const StyledSkills = styled.section`
-`
