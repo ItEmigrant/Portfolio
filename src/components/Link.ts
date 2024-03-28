@@ -23,8 +23,8 @@ export const Link = styled.a`
         position: absolute;
 
         bottom: 5px;
-        left: 0px;
-        right: 0px;
+        left: 0;
+        right: 0;
         background-color: ${theme.colors.accent};
 
         z-index: -1;
