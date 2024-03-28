@@ -7,7 +7,7 @@ import {FlexWrapper} from "../../../components/flexWrapper";
 import {S} from "../skills/Skill_Style"
 import {Container} from "../../../components/Container";
 
-export const Testimony = () => {
+export const Testimony: React.FC = () => {
     return (
         <StyledTestimony>
             <Container>
@@ -26,7 +26,6 @@ export const Testimony = () => {
 const StyledTestimony = styled.section`
     background-color: #d7cbcb;
     min-height: 40vh;
-
 
     ${S.IconWrapper} {
         margin: 28px 0 72px;

@@ -1,5 +1,4 @@
 import React from 'react';
-import styled from "styled-components";
 import {SectionTitle} from "../../../components/SectionTitle";
 import {TabMenu} from "./tabmenu/TabMenu";
 import {FlexWrapper} from "../../../components/flexWrapper";
@@ -7,6 +6,7 @@ import {Work} from "./itemWork/Work";
 import imageSocialNetwork from '../../../assets/images/SocialNetwork.webp'
 import imageTodolist from '../../../assets/images/Timer.webp'
 import {Container} from "../../../components/Container";
+import {S} from './Works_Style'
 
 
 const WorkData = [
@@ -26,27 +26,24 @@ const WorkData = [
 const items = ['All', 'React', 'ReactToolkit', 'ReactQuery']
 export const Works = () => {
     return (
-        <StyledWorks>
+        <S.StyledWorks>
             <Container>
                 <SectionTitle>My works</SectionTitle>
                 <TabMenu value={items}/>
                 <FlexWrapper justify={'space-between'} align={'flex-start'} wrap={'wrap'}>
-                    {WorkData.map((el)=>{
-                    return <Work title={el.title}
-                                 text={el.text}
-                                 src={el.src}/>
+                    {WorkData.map((el, index) => {
+                        return <Work title={el.title}
+                                     key={index}
+                                     text={el.text}
+                                     src={el.src}/>
                     })}
 
 
                 </FlexWrapper>
             </Container>
-        </StyledWorks>
+        </S.StyledWorks>
     );
 };
 
-const StyledWorks = styled.section`
-    ${FlexWrapper} {
-        gap: 30px;
-    }
-`
+
 
