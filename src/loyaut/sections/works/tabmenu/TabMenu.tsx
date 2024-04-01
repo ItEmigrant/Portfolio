@@ -2,22 +2,26 @@ import React from 'react';
 import styled from "styled-components";
 import {Link} from "../../../../components/Link";
 
-export const TabMenu = (props: { value: string[] }) => {
-    return (
-        <StyledTabMenu>
-            <ul>
+export const TabMenu = (props: {
+                            value: Array<{ status: string, type: 'all' | 'react' | 'reactToolkit' | 'reactQuery' }>
+                        }
+    ) => {
+        return (
+            <StyledTabMenu>
+                <ul>
 
-                {props.value.map((el, index) => <StyledListItem key={index}>
-                        <Link href="#">{el}</Link>
-                    </StyledListItem>
-                )}
-            </ul>
-        </StyledTabMenu>
-    );
-};
+                    {props.value.map((el, index) => <StyledListItem key={index}>
+                            <Link href="#">{el.status}</Link>
+                        </StyledListItem>
+                    )}
+                </ul>
+            </StyledTabMenu>
+        );
+    }
+;
 
 const StyledTabMenu = styled.nav`
-   
+
     ul {
         display: flex;
         justify-content: space-between;
@@ -28,6 +32,6 @@ const StyledTabMenu = styled.nav`
 
 
 const StyledListItem = styled.li`
-   
+
 `
 

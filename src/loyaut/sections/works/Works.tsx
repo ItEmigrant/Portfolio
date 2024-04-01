@@ -13,23 +13,31 @@ const WorkData = [
     {
         title: 'Social Network',
         text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo, odio!',
-        src: imageSocialNetwork
-
+        src: imageSocialNetwork,
+        type: 'react'
     },
     {
         title: 'Todolist',
         text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit',
-        src: imageTodolist
+        src: imageTodolist,
+        type: 'reactToolkit'
 
     }
 ]
-const items = ['All', 'React', 'ReactToolkit', 'ReactQuery']
+//const tabsItems = ['All', 'React', 'ReactToolkit', 'ReactQuery']
+
+const tabsItems: Array<{ status: string, type: 'all' | 'react' | 'reactToolkit' | 'reactQuery' }> = [
+    {status: 'All', type: 'all'},
+    {status: 'React', type: 'react'},
+    {status: 'ReactToolkit', type: 'reactToolkit'},
+    {status: 'ReactQuery', type: 'reactQuery'}
+]
 export const Works = () => {
     return (
         <S.StyledWorks>
             <Container>
                 <SectionTitle>My works</SectionTitle>
-                <TabMenu value={items}/>
+                <TabMenu value={tabsItems}/>
                 <FlexWrapper justify={'space-between'} align={'flex-start'} wrap={'wrap'}>
                     {WorkData.map((el, index) => {
                         return <Work title={el.title}
