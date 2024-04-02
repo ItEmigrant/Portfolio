@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {SectionTitle} from "../../../components/SectionTitle";
 import {TabMenu} from "./tabmenu/TabMenu";
 import {FlexWrapper} from "../../../components/flexWrapper";
@@ -33,13 +33,33 @@ const tabsItems: Array<{ status: string, type: 'all' | 'react' | 'reactToolkit' 
     {status: 'ReactQuery', type: 'reactQuery'}
 ]
 export const Works = () => {
+
+    const [currentFilterStatus, setCurrentFilterStatus] = useState('all');
+    let filteredWorks = WorkData;
+
+    if (currentFilterStatus === 'react') {
+        filteredWorks = WorkData.filter(work => work.type === 'react')
+    }
+
+    if (currentFilterStatus === 'reactToolkit') {
+        filteredWorks = WorkData.filter(work => work.type === 'reactToolkit')
+    }
+
+    if (currentFilterStatus === 'reactQuery') {
+        filteredWorks = WorkData.filter(work => work.type === 'reactQuery')
+    }
+
+
+    const changeFilterStatus = (value: 'all' | 'react' | 'reactToolkit' | 'reactQuery') => {
+        setCurrentFilterStatus(value)
+    }
     return (
         <S.StyledWorks>
             <Container>
                 <SectionTitle>My works</SectionTitle>
-                <TabMenu value={tabsItems}/>
+                <TabMenu value={tabsItems} changeFilterStatus={changeFilterStatus}/>
                 <FlexWrapper justify={'space-between'} align={'flex-start'} wrap={'wrap'}>
-                    {WorkData.map((el, index) => {
+                    {filteredWorks.map((el, index) => {
                         return <Work title={el.title}
                                      key={index}
                                      text={el.text}
