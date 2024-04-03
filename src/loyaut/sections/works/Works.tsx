@@ -8,6 +8,7 @@ import imageTodolist from '../../../assets/images/Timer.webp'
 import {Container} from "../../../components/Container";
 import {S} from './Works_Style'
 
+export type tabsItemType = 'all' | 'react' | 'reactToolkit' | 'reactQuery'
 
 const WorkData = [
     {
@@ -26,7 +27,7 @@ const WorkData = [
 ]
 //const tabsItems = ['All', 'React', 'ReactToolkit', 'ReactQuery']
 
-const tabsItems: Array<{ status: string, type: 'all' | 'react' | 'reactToolkit' | 'reactQuery' }> = [
+const tabsItems: Array<{ status: string, type: tabsItemType }> = [
     {status: 'All', type: 'all'},
     {status: 'React', type: 'react'},
     {status: 'ReactToolkit', type: 'reactToolkit'},
@@ -50,14 +51,15 @@ export const Works = () => {
     }
 
 
-    const changeFilterStatus = (value: 'all' | 'react' | 'reactToolkit' | 'reactQuery') => {
+    const changeFilterStatus = (value: tabsItemType) => {
         setCurrentFilterStatus(value)
     }
     return (
         <S.StyledWorks>
             <Container>
                 <SectionTitle>My works</SectionTitle>
-                <TabMenu value={tabsItems} changeFilterStatus={changeFilterStatus}/>
+                <TabMenu value={tabsItems} changeFilterStatus={changeFilterStatus} currentFilterStatus={currentFilterStatus}
+                />
                 <FlexWrapper justify={'space-between'} align={'flex-start'} wrap={'wrap'}>
                     {filteredWorks.map((el, index) => {
                         return <Work title={el.title}

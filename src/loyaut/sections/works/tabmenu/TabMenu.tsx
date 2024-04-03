@@ -1,11 +1,13 @@
 import React from 'react';
 import styled from "styled-components";
 import {Link} from "../../../../components/Link";
+import {tabsItemType} from "../Works";
 
 
 type tabMenuPropsType = {
-    value: Array<{ status: string, type: 'all' | 'react' | 'reactToolkit' | 'reactQuery' }>
-    changeFilterStatus: (value: 'all' | 'react' | 'reactToolkit' | 'reactQuery') => void
+    value: Array<{ status: string, type: tabsItemType }>
+    changeFilterStatus: (value: tabsItemType) => void
+    currentFilterStatus: string
 }
 
 export const TabMenu = (props: tabMenuPropsType) => {
@@ -14,7 +16,7 @@ export const TabMenu = (props: tabMenuPropsType) => {
                 <ul>
 
                     {props.value.map((el, index) => <StyledListItem key={index}>
-                            <Link as={'button'} onClick={() => {
+                            <Link active={props.currentFilterStatus===el.type} as={'button'} onClick={() => {
                                 props.changeFilterStatus(el.type)
                             }}>{el.status}</Link>
                         </StyledListItem>
