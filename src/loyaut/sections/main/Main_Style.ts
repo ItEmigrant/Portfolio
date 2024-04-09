@@ -38,8 +38,11 @@ const PhotoWrapper = styled.div`
 
 `
 const MainTitle = styled.h1`
-    ${font({weight: 400, FMax: 27, FMin: 20})}
+    ${font({weight: 400, FMax: 27, FMin: 20})};
 
+    p {
+        display: none;
+    }
 `
 
 const MainName = styled.h2`

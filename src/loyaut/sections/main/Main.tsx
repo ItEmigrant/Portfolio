@@ -3,6 +3,8 @@ import photo from "../../../assets/images/myPhoto.jpg"
 import {FlexWrapper} from "../../../components/flexWrapper";
 import {Container} from "../../../components/Container";
 import {S} from './Main_Style'
+import Typewriter from 'typewriter-effect';
+
 export const Main: React.FC = () => {
     return (
         <S.Main>
@@ -11,7 +13,20 @@ export const Main: React.FC = () => {
                     <div>
                         <S.SmallText>Hi There</S.SmallText>
                         <S.MainName>I am <span>Bohdan Solomchak</span></S.MainName>
-                        <S.MainTitle>Frontend developer</S.MainTitle>
+
+                        {/* <S.MainTitle>Frontend developer</S.MainTitle>*/}
+                        <S.MainTitle>
+                           <p>Frontend developer, React developer</p>
+                            <Typewriter
+                                options={{
+                                    strings: ['Frontend developer', 'React developer'],
+                                    autoStart: true,
+                                    loop: true,
+                                    delay: 50
+                                }}
+                            />
+                        </S.MainTitle>
+
                     </div>
                     <S.PhotoWrapper>
                         <S.Photo src={photo} alt={'main photo'}/>
