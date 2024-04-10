@@ -4,6 +4,7 @@ import {FlexWrapper} from "../../../components/flexWrapper";
 import {Container} from "../../../components/Container";
 import {S} from './Main_Style'
 import Typewriter from 'typewriter-effect';
+import Tilt from 'react-parallax-tilt';
 
 export const Main: React.FC = () => {
     return (
@@ -14,9 +15,8 @@ export const Main: React.FC = () => {
                         <S.SmallText>Hi There</S.SmallText>
                         <S.MainName>I am <span>Bohdan Solomchak</span></S.MainName>
 
-                        {/* <S.MainTitle>Frontend developer</S.MainTitle>*/}
                         <S.MainTitle>
-                           <p>Frontend developer, React developer</p>
+                            <p>Frontend developer, React developer</p>
                             <Typewriter
                                 options={{
                                     strings: ['Frontend developer', 'React developer'],
@@ -26,12 +26,12 @@ export const Main: React.FC = () => {
                                 }}
                             />
                         </S.MainTitle>
-
                     </div>
-                    <S.PhotoWrapper>
-                        <S.Photo src={photo} alt={'main photo'}/>
-                    </S.PhotoWrapper>
-
+                    <Tilt className="background-stripes parallax-effect" perspective={500}>
+                        <S.PhotoWrapper>
+                            <S.Photo src={photo} alt={'main photo'}/>
+                        </S.PhotoWrapper>
+                    </Tilt>
                 </FlexWrapper>
             </Container>
         </S.Main>
