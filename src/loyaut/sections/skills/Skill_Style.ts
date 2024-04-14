@@ -38,6 +38,7 @@ const IconWrapper = styled.div`
     }
 `
 const Skills = styled.section`
+    position: relative;
 `
 export const S = {
     Skill,

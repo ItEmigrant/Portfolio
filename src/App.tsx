@@ -7,11 +7,13 @@ import {Testimony} from "./loyaut/sections/testimony/testimony";
 import {Contact} from "./loyaut/sections/contacts/Contacts";
 import {Slogan} from "./loyaut/sections/slogan/Slogan";
 import {Footer} from "./loyaut/footer/Footer";
+import {Particle} from "./components/particle/Particle";
 
 
 function App() {
     return (
         <div className="App" >
+            <Particle/>
             <Header/>
             <Main/>
             <Skills/>
