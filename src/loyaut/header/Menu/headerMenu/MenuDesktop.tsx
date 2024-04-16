@@ -3,10 +3,10 @@ import React from "react";
 import {S} from './HeaderMenu_Styles';
 
 
-export const MenuDesktop: React.FC<{ value: string[] }> = (props: { value: string[] }) => {
+export const MenuDesktop: React.FC = () => {
     return (
         <S.HeaderMenu>
-            <Menu value={props.value}/>
+            <Menu />
         </S.HeaderMenu>
     );
 };

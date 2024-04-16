@@ -7,7 +7,6 @@ import {MenuMobile} from "./Menu/headerMenu/MenuMobile";
 import {S} from './Header_Styles'
 
 
-const value = ['Home', 'Skills', 'Works', 'Testimony', 'Contact']
 export const Header: React.FC = () => {
     const [width, setWidth] = React.useState(window.innerWidth);
     const breakpoint = 768;
@@ -23,7 +22,7 @@ export const Header: React.FC = () => {
             <Container>
                 <FlexWrapper justify={'space-between'} align={'center'}>
                     <Logo/>
-                    {width < breakpoint ? <MenuMobile value={value}/> : <MenuDesktop value={value}/>}
+                    {width < breakpoint ? <MenuMobile/> : <MenuDesktop/>}
                 </FlexWrapper>
             </Container>
         </S.StyledHeader>
