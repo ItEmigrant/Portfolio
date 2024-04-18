@@ -55,7 +55,7 @@ export const Works = () => {
         setCurrentFilterStatus(value)
     }
     return (
-        <S.StyledWorks>
+        <S.StyledWorks id={'works'}>
             <Container>
                 <SectionTitle>My works</SectionTitle>
                 <TabMenu value={tabsItems} changeFilterStatus={changeFilterStatus} currentFilterStatus={currentFilterStatus}

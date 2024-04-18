@@ -1,7 +1,6 @@
 import React from 'react';
 import {S} from './HeaderMenu_Styles'
 
-
 const value = [
     {
         title: 'Home',
@@ -20,7 +19,7 @@ const value = [
         href: 'testimony'
     },
     {
-        title:  'Contact',
+        title: 'Contact',
         href: 'contact'
     }
 ]
@@ -31,7 +30,10 @@ export const Menu: React.FC = () => {
             <ul>
 
                 {value.map((el, index) => <S.ListItem key={index}>
-                        <S.Link href={`#${el.href}`}>
+                        <S.NavLink
+                            smooth={true}
+                            activeClass={'active'}
+                            to={el.href}>
                             {el.title}
                             <S.Mask>
                                 <span>{el.title}</span>
@@ -39,7 +41,7 @@ export const Menu: React.FC = () => {
                             <S.Mask>
                                 <span>{el.title}</span>
                             </S.Mask>
-                        </S.Link>
+                        </S.NavLink>
                     </S.ListItem>
                 )}
             </ul>

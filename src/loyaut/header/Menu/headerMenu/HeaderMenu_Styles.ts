@@ -1,5 +1,6 @@
 import styled, {css} from "styled-components";
 import {theme} from "../../../../styles/Theme";
+import {Link} from "react-scroll";
 
 //menu
 const Mask = styled.span`
@@ -22,7 +23,7 @@ const Mask = styled.span`
     }
 `
 
-const Link = styled.a`
+const NavLink = styled(Link)`
     color: transparent;
     font-family: 'Josefin Sans', sans-serif;
     font-weight: 400;
@@ -153,7 +154,7 @@ const HeaderMenu = styled.nav`
 `
 
 export const S = {
-    Link,
+    NavLink,
     ListItem,
     Mask,
     MobileMenuPopup,
