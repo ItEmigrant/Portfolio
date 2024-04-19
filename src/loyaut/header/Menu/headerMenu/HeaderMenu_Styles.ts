@@ -22,6 +22,9 @@ const Mask = styled.span`
         }
     }
 `
+const ListItem = styled.li`
+    position: relative;
+`
 
 const NavLink = styled(Link)`
     color: transparent;
@@ -29,10 +32,6 @@ const NavLink = styled(Link)`
     font-weight: 400;
     font-size: 30px;
     text-align: center;
-`
-
-const ListItem = styled.li`
-    position: relative;
 
     &::before {
         content: "";
@@ -50,7 +49,7 @@ const ListItem = styled.li`
 
     }
 
-    &:hover {
+    &:hover, &.active {
         &::before {
             transform: scale(1);
         }
@@ -65,6 +64,8 @@ const ListItem = styled.li`
         }
     }
 `
+
+
 
 //MobileMenuStyles
 const MobileMenu = styled.nav`

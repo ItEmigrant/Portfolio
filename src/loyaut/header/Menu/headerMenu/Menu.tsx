@@ -33,6 +33,7 @@ export const Menu: React.FC = () => {
                         <S.NavLink
                             smooth={true}
                             activeClass={'active'}
+                            spy={true}
                             to={el.href}>
                             {el.title}
                             <S.Mask>
