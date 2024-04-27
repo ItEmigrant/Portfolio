@@ -16,28 +16,37 @@ const ImageWrapper = styled.div`
     position: relative;
 
     &:hover {
-        ${Button} {
+        &::before {
             opacity: 1;
         }
 
-        &::before {
-            content: "";
-            position: absolute;
-            left: 0;
-            right: 0;
-            top: 0;
-            bottom: 0;
-            background-color: rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(4px);
+        ${Button} {
+            opacity: 1;
+            transform: translate(-50%, -50%);
         }
     }
+
+    &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(2px);
+        opacity: 0;
+        transition: ${theme.animations.transition};
+    }
+
 
     ${Button} {
         opacity: 0;
         position: absolute;
         left: 50%;
         top: 50%;
-        transform: translate(-50%, -50%);
+        transform: translate(-50%, -40%);
+        transition: ${theme.animations.transition};
 
         &::before {
             width: 100%;

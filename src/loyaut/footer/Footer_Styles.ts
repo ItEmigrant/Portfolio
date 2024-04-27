@@ -19,7 +19,9 @@ const SocialList = styled.ul`
     gap: 20px;
     margin: 30px 0;
 `
-const SocialItem = styled.li``
+const SocialItem = styled.li`
+
+`
 
 const SocialIconLink = styled.footer`
     background-color: rgba(255, 255, 255, 0.1);
@@ -30,7 +32,7 @@ const SocialIconLink = styled.footer`
     display: flex;
     justify-content: center;
     align-items: center;
-
+    transition: ${theme.animations.transition};
     color: ${theme.colors.accent};
 
     &:hover {
