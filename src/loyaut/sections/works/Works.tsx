@@ -7,6 +7,7 @@ import imageSocialNetwork from '../../../assets/images/SocialNetwork.webp'
 import imageTodolist from '../../../assets/images/Timer.webp'
 import {Container} from "../../../components/Container";
 import {S} from './Works_Style'
+import {AnimatePresence, motion} from "framer-motion"
 
 export type tabsItemType = 'all' | 'react' | 'reactToolkit' | 'reactQuery'
 
@@ -15,13 +16,15 @@ const WorkData = [
         title: 'Social Network',
         text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo, odio!',
         src: imageSocialNetwork,
-        type: 'react'
+        type: 'react',
+        id: 1
     },
     {
         title: 'Todolist',
         text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit',
         src: imageTodolist,
-        type: 'reactToolkit'
+        type: 'reactToolkit',
+        id: 2
 
     }
 ]
@@ -58,15 +61,31 @@ export const Works = () => {
         <S.StyledWorks id={'works'}>
             <Container>
                 <SectionTitle>My works</SectionTitle>
-                <TabMenu value={tabsItems} changeFilterStatus={changeFilterStatus} currentFilterStatus={currentFilterStatus}
+                <TabMenu value={tabsItems} changeFilterStatus={changeFilterStatus}
+                         currentFilterStatus={currentFilterStatus}
                 />
                 <FlexWrapper justify={'space-between'} align={'flex-start'} wrap={'wrap'}>
-                    {filteredWorks.map((el, index) => {
-                        return <Work title={el.title}
-                                     key={index}
-                                     text={el.text}
-                                     src={el.src}/>
-                    })}
+
+                    <AnimatePresence>
+                        {filteredWorks.map((el) => {
+                            return (
+                                <motion.div style={{width: '400px', flexGrow: '1', maxWidth: '540px'}}
+                                            layout={true}
+                                            initial={{opacity: 0}}
+                                            animate={{opacity: 1}}
+                                            exit={{opacity: 0}}
+                                            key={el.id}
+                                >
+                                    <Work title={el.title}
+                                          key={el.id}
+                                          text={el.text}
+                                          src={el.src}
+                                    />
+                                </motion.div>
+
+                            )
+                        })}
+                    </AnimatePresence>
 
 
                 </FlexWrapper>
